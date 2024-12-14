@@ -1,36 +1,262 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Tectology Documents Application Documentation
 
-## Getting Started
+Project Overview
 
-First, run the development server:
+This application is a full-stack web application built to manage user authentication, CRUD operations for departments and sub-departments, and a protected routing system. It incorporates a modern tech stack to ensure scalability, maintainability, and an excellent developer experience.
 
-```bash
+Technologies Used
+
+Frontend: Next.js
+
+Purpose:
+
+Build a server-rendered React application with optimized performance.
+
+Simplifies routing with its built-in file-based routing system.
+
+
+
+<!-- ==================================KEY FEATURES -->
+Key Features:
+
+Server-Side Rendering (SSR) and Static Site Generation (SSG).
+
+Seamless API integration with the backend.
+
+
+=========================================BACKEND=======================================
+Backend: NestJS
+
+Purpose:
+
+Create a modular, scalable server-side application using TypeScript.
+
+Enforce clean architecture with decorators and middleware.
+
+Key Features:
+
+Dependency Injection for clean, testable code.
+
+Support for RESTful API design and WebSocket integration.
+
+
+=====================================================DATABASE==============================
+Database: PostgreSQL
+
+Purpose:
+
+Store structured data with strong ACID compliance for reliability.
+
+Handle complex relational data effectively.
+
+Key Features:
+
+Advanced indexing and querying capabilities.
+
+Open-source and highly scalable.
+
+
+==================================================ORM==================================
+ORM: TypeORM
+
+Purpose:
+
+Map database tables to JavaScript/TypeScript classes for seamless integration.
+
+Simplify database operations with an abstracted query interface.
+
+Key Features:
+
+Support for migrations to manage schema changes.
+
+Compatibility with PostgreSQL and other relational databases.
+
+
+==================================================USER AUTHENTICATION==========================================
+Authentication: JWT & bcrypt
+
+JWT (JSON Web Tokens):
+
+Handle secure user authentication and session management.
+
+Tokens are generated during login and verified on protected routes.
+
+bcrypt:
+
+Hash user passwords before storing them in the database for enhanced security.
+
+Ensures one-way encryption of sensitive data.
+
+Styling: Tailwind CSS
+
+Purpose:
+
+Rapidly build modern, responsive UI components.
+
+Maintain consistency across the application with a utility-first CSS framework.
+
+Key Features:
+
+Highly customizable and developer-friendly.
+
+Integrated dark mode and responsive design utilities.
+
+
+=====================================================typescript===================================
+TypeScript
+
+Purpose:
+
+Enhance code reliability and maintainability by introducing static typing.
+
+Catch potential bugs at compile-time rather than runtime.
+
+Key Features:
+
+Provides IntelliSense and auto-completion for better developer experience.
+
+Enforces type safety in the codebase.
+
+
+==============================================================
+React Icons
+
+Purpose:
+
+Add visually appealing icons to the user interface.
+
+Key Features:
+
+Large collection of customizable, lightweight icons.
+
+
+
+=================================================
+Class Validator
+
+Purpose:
+
+Validate incoming requests to ensure data integrity.
+
+Reduce boilerplate by integrating decorators in DTOs (Data Transfer Objects).
+
+Key Features:
+
+Supports validation rules like @IsString, @IsEmail, etc.
+
+Features
+
+
+============================================================================AUTHENTICATIONOF USERS=================
+Authentication
+
+User login and signup with username and password.
+
+Password hashing using bcrypt for enhanced security.
+
+JWT-based token generation for secure session management.
+
+CRUD for Departments
+
+List, create, update, and delete departments.
+
+Manage sub-departments within a department.
+
+Provide table and card views for department data.
+
+Protected Routes
+
+Secure sensitive routes by verifying JWT tokens.
+
+Redirect unauthorized users to the login page.
+
+UI/UX
+
+Simple, intuitive design built with Tailwind CSS.
+
+Responsive layouts for mobile and desktop views.
+
+Consistent use of React Icons for enhanced visuals.
+
+Getting Started
+
+Prerequisites
+
+Node.js installed on your local machine.
+
+PostgreSQL installed and running.
+
+Environment variables configured in .env files for both frontend and backend.
+
+Environment Variables
+
+Example .env file for backend:
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+DB_NAME=your_database
+JWT_SECRET=your_jwt_secret
+
+
+<!-- ===================================================INSTALLATION =========================== -->
+Installation
+
+Clone the repository:
+
+git clone https://github.com/charleeBlaqTech/tactology_ui     =============FRONTEND UI====================
+git clone https://github.com/charleeBlaqTech/tactology_task_api     =============BACKEND API====================
+
+Navigate to the backend folder:
+
+cd backend
+npm install
+
+Navigate to the frontend folder:
+
+cd frontend
+npm install
+
+Running the Application
+
+Start the PostgreSQL server.
+
+Run the backend server:
+
+npm run start:dev
+
+Run the frontend application:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the application in your browser at http://localhost:3000.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Folder Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Backend
 
-## Learn More
+backend/
+├── src/
+│   ├── auth/    # Authentication module
+│   ├── departments/ # Departments module
+│   ├── entities/    # Entity definitions
+│   ├── main.ts      # Application entry point
 
-To learn more about Next.js, take a look at the following resources:
+Frontend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+frontend/
+├── components/    # Reusable components
+├── pages/         # Next.js pages
+├── styles/        # Global styles
+├── utils/         # Helper functions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Future Improvements
 
-## Deploy on Vercel
+Add user roles and permissions for fine-grained access control.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Implement testing using Jest for both frontend and backend.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add Docker support for containerization.
+
+Enhance UI with additional animations and transitions.
